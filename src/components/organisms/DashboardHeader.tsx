@@ -1,5 +1,5 @@
 import { Logo } from "@/components/atoms/Logo";
-import { ChartTypeToggle } from "@/components/molecules/ChartTypeToggle";
+import { ChartTypeSelect } from "@/components/molecules/ChartTypeSelect";
 import { ThemeToggle } from "@/components/molecules/ThemeToggle";
 import { ThresholdInput } from "@/components/molecules/ThresholdInput";
 import { YearSelector } from "@/components/molecules/YearSelector";
@@ -42,7 +42,7 @@ export function DashboardHeader(p: Props) {
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <YearSelector value={p.year} onChange={p.onYearChange} />
-          <ChartTypeToggle value={p.chartType} onChange={p.onChartTypeChange} />
+          <ChartTypeSelect value={p.chartType} onChange={p.onChartTypeChange} />
           <ThresholdInput value={p.threshold} onChange={p.onThresholdChange} />
         </div>
       </div>

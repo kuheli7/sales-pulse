@@ -17,7 +17,7 @@ A sales dashboard built with **Next.js 15**, **TypeScript**, **Tailwind CSS v4**
 | --- | --- |
 | Custom filter input: set your own sales threshold; chart points below it are hidden | `ThresholdInput` molecule, applied in `DashboardClient` |
 | API integration: data is fetched from `/api/sales` | `src/app/api/sales/route.ts` |
-| Multiple chart types: switch between bar, line and pie (Recharts) | `ChartTypeToggle` molecule, `SalesChart` organism |
+| Multiple chart types: choose bar, line or donut from a "Plot" dropdown (Recharts) | `ChartTypeSelect` molecule, `SalesChart` organism |
 
 ### Design
 
@@ -34,8 +34,8 @@ The look is a custom dark "fintech" theme rather than a stock template:
 
 ```
 src/components
-├── atoms/       Button, Card, Input, Spinner, Logo
-├── molecules/   StatCard, YearSelector, ChartTypeToggle, ThresholdInput, ThemeToggle, ChartLegend
+├── atoms/       Button, Card, Input, Select, Spinner, Logo
+├── molecules/   StatCard, YearSelector, ChartTypeSelect, ThresholdInput, ThemeToggle, ChartLegend
 ├── organisms/   DashboardHeader, KpiRow, InsightStrip, SalesChart
 └── templates/   DashboardTemplate (page layout; the page supplies the data)
 src/app/dashboard   page (the dashboard page)

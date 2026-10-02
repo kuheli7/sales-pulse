@@ -1,15 +1,24 @@
-import { Button } from "@/components/atoms/Button";
+import { Select } from "@/components/atoms/Select";
 import { YEARS } from "@/lib/sales";
 import type { Year } from "@/types/sales";
 
 export function YearSelector({ value, onChange }: { value: Year; onChange: (y: Year) => void }) {
   return (
-    <div className="flex items-center gap-2" role="group" aria-label="Select year">
-      {YEARS.map((y) => (
-        <Button key={y} active={y === value} onClick={() => onChange(y)}>
-          {y}
-        </Button>
-      ))}
-    </div>
+    <label className="flex items-center gap-2 text-sm text-ink-2">
+      Year
+      <Select
+        value={value}
+        onChange={(e) => {
+          const year = YEARS.find((y) => String(y) === e.target.value);
+          if (year) onChange(year);
+        }}
+      >
+        {YEARS.map((y) => (
+          <option key={y} value={y}>
+            {y}
+          </option>
+        ))}
+      </Select>
+    </label>
   );
 }
